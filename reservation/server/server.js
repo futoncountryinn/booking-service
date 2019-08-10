@@ -41,6 +41,11 @@ app.post('/', (req, res) => {
   });
 });
 
+// Delete record ***WIP!!***
+database.deleteRecord(req.body, () => {
+  database
+})
+
 // Listen for requests
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);

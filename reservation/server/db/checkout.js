@@ -18,7 +18,7 @@ const insertRecord = (checkout, cb) => {
 };
 
 const deleteRecord = (deleteID, cb) => {
-  db.queryAsyc(`DELETE FROM checkout WHERE id = ${deleteID}`, (err, results) => {
+  db.queryAsync(`DELETE FROM checkout WHERE id = ${deleteID}`, (err, results) => {
     if (err) {
       console.log(`Error with delete record function: `, err);
     }

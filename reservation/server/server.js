@@ -41,12 +41,15 @@ app.post('/', (req, res) => {
   });
 });
 
-// Delete record ***WIP!!***
+// Delete record by ID
 app.delete('/', (req, res) => {
-  database.deleteRecord(req.body, (response) => {
+  database.deleteRecord(req.body.id, (response) => {
     res.send(response);
   });
 });
+
+// Edit reservation
+
 
 // Listen for requests
 app.listen(port, () => {

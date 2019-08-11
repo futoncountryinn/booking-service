@@ -42,9 +42,11 @@ app.post('/', (req, res) => {
 });
 
 // Delete record ***WIP!!***
-database.deleteRecord(req.body, () => {
-  database
-})
+app.delete('/', (req, res) => {
+  database.deleteRecord(req.body, (response) => {
+    res.send(response);
+  });
+});
 
 // Listen for requests
 app.listen(port, () => {

@@ -17,5 +17,16 @@ const insertRecord = (checkout, cb) => {
   });
 };
 
+const deleteRecord = (deleteID, cb) => {
+  db.queryAsyc(`DELETE FROM checkout WHERE id = ${deleteID}`, (err, results) => {
+    if (err) {
+      console.log(`Error with delete record function: `, err);
+    }
+    console.log(`Deleted reservation for ID: `, deleteID);
+    cb(`Deleted reservation for ID: `, deleteID);
+  })
+};
+
 module.exports.insertRecord = insertRecord;
 module.exports.getRecords = getRecords;
+module.exports.deleteRecord = deleteRecord;

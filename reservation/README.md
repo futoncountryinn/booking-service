@@ -1,12 +1,12 @@
-# AirBnB component for booking a room
+# AirBnB Booking Component
 
-> Project description
+> Single component of a cloned AirBnB product details page.
 
 ## Related Projects
 
-  - https://github.com/futoncountryinn/photos-service
-  - https://github.com/futoncountryinn/reviews-service
-  - https://github.com/futoncountryinn/booking-proxy
+  - Photos component: https://github.com/futoncountryinn/photos-service
+  - Reviews component: https://github.com/futoncountryinn/reviews-service
+  - Proxy Server: https://github.com/futoncountryinn/booking-proxy
 
 ## License
 This project is licensed under the MIT License - see the LICENSE.md file for details
@@ -38,13 +38,13 @@ In your terminal,
 
 Multiple API routes are supported, including:
 
-### `GET` with route `/checkout` to get all reservation records:
+#### `GET` with route `/checkout` to get all reservation records
 
-### `POST` with route `/` to insert new records
+#### `POST` with route `/` to insert new records
 - include `{checkin: value, checkout: value}` in request body
 
-### `DELETE` with route `/` to remove reservation record
+#### `DELETE` with route `/` to remove reservation record
 - incude `{id: value}` in request body
 
-### `PUT` with route `/` to update an existing record
+#### `PUT` with route `/` to update an existing record
 - include `{id: value, checkin: value, checkout: value}` in request body

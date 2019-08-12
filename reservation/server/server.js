@@ -49,7 +49,12 @@ app.delete('/', (req, res) => {
 });
 
 // Edit reservation
-
+app.put('/', (req, res) => {
+  console.log(req.body.checkin);
+  database.editRecord(req.body, (response) => {
+    res.send(response);
+  });
+});
 
 // Listen for requests
 app.listen(port, () => {

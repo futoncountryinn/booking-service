@@ -27,6 +27,17 @@ const deleteRecord = (deleteID, cb) => {
   })
 };
 
+const editRecord = (record, cb) => {
+  db.queryAsync(`UPDATE checkout SET checkin = '${record.checkin}', checkout = '${record.checkout}' WHERE id = '${record.id}'`, (err, results) => {
+    if (err) {
+      console.log(`Error with edit record query: `, err);
+    }
+    console.log(`Edited record at ID: `, record.id);
+    cb(`Edited record at ID: `, record.id);
+  });
+};
+
 module.exports.insertRecord = insertRecord;
 module.exports.getRecords = getRecords;
 module.exports.deleteRecord = deleteRecord;
+module.exports.editRecord = editRecord;

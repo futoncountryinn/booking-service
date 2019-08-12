@@ -1,39 +1,50 @@
-# Project Name
+# AirBnB component for booking a room
 
 > Project description
 
 ## Related Projects
 
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
-  - https://github.com/teamName/repo
+  - https://github.com/futoncountryinn/photos-service
+  - https://github.com/futoncountryinn/reviews-service
+  - https://github.com/futoncountryinn/booking-proxy
 
-## Table of Contents
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
 
-1. [Usage](#Usage)
-1. [Requirements](#requirements)
-1. [Development](#development)
+---
 
-## Usage
+## Getting Started
 
-> Some usage instructions
+### Prerequisites
+In your terminal,
+- [ ] `npm install`
 
-## Requirements
+### Starting the App
+In your terminal,
+- [ ] Run webpack `npm run build-dev` or `npm run build-prod`
+- [ ] Start your server `npm start`
+- [ ] Seed the database w/ fake data `npm run seed`
 
-An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
+In your browser,
+- [ ] Navigate to `http://localhost:3002`
 
-- Node 6.13.0
-- etc
+### Testing
+In your terminal,
+- [ ] Run Jest tests for MongoDB connection & Express server connections `npm test`
 
-## Development
+---
 
-### Installing Dependencies
+## API Routes
 
-From within the root directory:
+Multiple API routes are supported, including:
 
-```sh
-npm install -g webpack
-npm install
-```
+### `GET` with route `/checkout` to get all reservation records:
 
+### `POST` with route `/` to insert new records
+- include `{checkin: value, checkout: value}` in request body
+
+### `DELETE` with route `/` to remove reservation record
+- incude `{id: value}` in request body
+
+### `PUT` with route `/` to update an existing record
+- include `{id: value, checkin: value, checkout: value}` in request body

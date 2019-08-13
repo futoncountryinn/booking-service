@@ -20,7 +20,7 @@ const seedDatabase = () => {
       checkout: endDate
     }
 
-    db.queryAsync(`INSERT INTO checkout SET ?`, checkout, (err, results) => {
+    db.queryAsync(`INSERT INTO checkout SET ?`, checkout, (err) => {
       if (err) {
         console.log(err);
       }

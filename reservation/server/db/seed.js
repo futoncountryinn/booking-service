@@ -12,9 +12,9 @@ const db = Promise.promisifyAll(connection);
 
 const seedDatabase = () => {
   for (let i = 1; i < 101; i++) {
-    const now = moment([moment().year(), moment().month(), 1]);
-    startDate = now.add(i, 'month')
-    endDate = startDate.add(Math.floor(Math.random() * 7), 'days');
+    // const now = moment([moment().year(), moment().month(), 1]); // error here: by referring to same moment() dates were identical
+    startDate = moment([moment().year(), moment().month(), 1]).add(i, 'month')
+    endDate = moment([moment().year(), moment().month(), 1]).add(i, 'month').add(Math.floor(Math.random() * 7), 'days');
     const checkout = {
       checkin: startDate,
       checkout: endDate
@@ -31,4 +31,3 @@ const seedDatabase = () => {
 
 db.connectAsync()
   .then(() => seedDatabase());
-

@@ -7,7 +7,7 @@
     "buikd-dev": "webpack -d --watch",
     "buikd-prod": "webpack -p --watch",
     "start": "nodemon server/server.js",
-    "seedSQL": "node server/db/seedSQL.js",
+    "seedSQL": "node server/db/MySQL/seedSQL.js",
     "seedmongo": "node server/db/MongoDB/seedMongoDB.js",
     "test": "jest"
   },

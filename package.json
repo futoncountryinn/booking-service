@@ -9,7 +9,7 @@
     "start": "nodemon server/server.js",
     "buildCSV": "node --optimize_for_size --max-old-space-size=4096 server/db/createCSV.js",
     "seedSQL": "node ./server/db/MySQL/seedSQL.js",
-    "seedmongo": "node server/db/MongoDB/seedMongoDB.js",
+    "seedmongo": "mongoimport --db airbnbDB --collection 'checkouts' --drop --type csv --host 'localhost:27017' --fields 'checkin, checkout' --file '/Users/keenan/System Design Capstone/booking-service/server/db/records.csv'",
     "test": "jest"
   },
   "keywords": [],

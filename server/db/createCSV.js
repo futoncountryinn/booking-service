@@ -1,15 +1,7 @@
-// const mysql = require('mysql');
-// const Promise = require('bluebird');
-const fs = require('fs'); // benchmark again, but doesn't seem as fast as csv-writer
+const fs = require('fs');
 const moment = require('moment');
 
-// const connection = mysql.createConnection({
-//   user: 'root',
-//   password: '',
-//   database: 'airbnb'
-// });
-
-// const db = Promise.promisifyAll(connection);
+// most recent (8/24) completed 10M records in ~ 38 minutes
 
 const createReservation = (index, cb) => {
   startDate = moment([moment().year(), moment().month(), 1]).add(index, 'day')

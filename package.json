@@ -1,7 +1,7 @@
 {
-  "name": "airbnb",
+  "name": "airbnb-reservation-component",
   "version": "1.0.0",
-  "description": "airbnb front end capstone",
+  "description": "Single component of a cloned AirBnB product details page.",
   "main": "index.js",
   "scripts": {
     "build-dev": "webpack -d --watch",
@@ -13,7 +13,7 @@
     "test": "jest"
   },
   "keywords": [],
-  "author": "",
+  "author": "Keenan Thomson",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",

@@ -7,7 +7,8 @@
     "build-dev": "webpack -d --watch",
     "build-prod": "webpack -p --watch",
     "start": "nodemon server/server.js",
-    "seedSQL": "node --optimize_for_size --max-old-space-size=4096 server/db/MySQL/createCSV.js",
+    "buildCSV": "node --optimize_for_size --max-old-space-size=4096 server/db/createCSV.js",
+    "seedSQL": "node ./server/db/MySQL/seedSQL.js",
     "seedmongo": "node server/db/MongoDB/seedMongoDB.js",
     "test": "jest"
   },

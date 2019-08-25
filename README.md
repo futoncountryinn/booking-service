@@ -23,7 +23,7 @@ In your terminal,
 In your terminal,
 - [ ] Run webpack `npm run build-dev` or `npm run build-prod`
 - [ ] Start your server `npm start`
-- [ ] Seed the database w/ fake data `npm run seed`
+- [ ] Seed the database w/ data `npm run buildCSV` then `npm run seedSQL`
 
 In your browser,
 - [ ] Navigate to `http://localhost:3002`

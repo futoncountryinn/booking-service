@@ -4,10 +4,10 @@
   "description": "airbnb front end capstone",
   "main": "index.js",
   "scripts": {
-    "buikd-dev": "webpack -d --watch",
-    "buikd-prod": "webpack -p --watch",
+    "build-dev": "webpack -d --watch",
+    "build-prod": "webpack -p --watch",
     "start": "nodemon server/server.js",
-    "seedSQL": "node server/db/MySQL/seedSQL.js",
+    "seedSQL": "node --optimize_for_size --max-old-space-size=4096 server/db/MySQL/createCSV.js",
     "seedmongo": "node server/db/MongoDB/seedMongoDB.js",
     "test": "jest"
   },
@@ -21,6 +21,7 @@
     "babel-loader": "^8.0.5",
     "cors": "^2.8.5",
     "css-loader": "^2.1.1",
+    "csv-writer": "^1.5.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "identity-obj-proxy": "^3.0.0",

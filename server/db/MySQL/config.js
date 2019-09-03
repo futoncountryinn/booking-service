@@ -14,3 +14,5 @@ module.exports = (db) => {
       console.log(err);
     });
 };
+
+// deleted CuID (8/31)

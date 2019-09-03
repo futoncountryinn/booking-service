@@ -8,8 +8,8 @@
     "build-prod": "webpack -p --watch",
     "start": "nodemon server/server.js",
     "buildCSV": "node --optimize_for_size --max-old-space-size=4096 server/db/createCSV.js",
-    "seedSQL": "node ./server/db/MySQL/seedSQL.js",
-    "seedmongo": "mongoimport --db airbnbDB --collection 'checkouts' --drop --type csv --host 'localhost:27017' --fields 'checkin, checkout' --file '/Users/keenan/System Design Capstone/booking-service/server/db/records.csv'",
+    "seedSQL": "mysql -u root < server/db/MySQL/seedSQLScript.sql",
+    "seedmongo": "./server/db/MongoDB/SeedMongoDB.sh",
     "test": "jest"
   },
   "keywords": [],

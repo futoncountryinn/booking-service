@@ -18,11 +18,13 @@ connection.connect(error => {
 const insertAllCSVRecords = () => {
   let t0 = Date.now();
   db.queryAsync(
-    `load data local infile './server/db/records.csv'
+    `use airbnb
+    load data local infile './server/db/records.csv'
     into table checkout
     fields terminated by ','
     lines terminated by '\n'
-    (checkin, checkout)`, (err) => {
+    ignore 1 rows
+    (CuID, checkin, checkout)`, (err) => {
     if (err) {
       console.log(`insertAllCSVRecords error:`, err);
     } else {

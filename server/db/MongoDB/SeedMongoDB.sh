@@ -1,0 +1,1 @@
+mongoimport --db airbnbDB --collection 'checkouts' --drop --type csv --host 'localhost:27017' --headerline --file '/Users/keenan/System Design Capstone/booking-service/server/db/records.csv'

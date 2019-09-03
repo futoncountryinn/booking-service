@@ -1,36 +1,36 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/airbnbDB');
+mongoose.connect('mongodb://127.0.0.1/airbnbDB', { useNewUrlParser: true });
 
 let checkoutSchema = {
-  id: Number,
+  _id: Number,
   checkin: String,
   checkout: String
 }
 
-let db = {};
-
 let Checkout = mongoose.model('Checkout', checkoutSchema);
 
-db.save = (array, callback) => {
-  Checkout.deleteMany({}, () => {
-    Checkout.insertMany(array, (err) => {
-      if (err) {
-        console.log(`Save method error --> `, err);
-      } else {
-        callback();
-      }
-    })
-  });
-};
+// let db = {};
 
-db.getDocument = (id, callback) => {
-  Checkout.find({id:id}, (err, items) => {
-    if (err) {
-      console.log(`getDocument method error --> `, err);
-    } else {
-      callback(items);
-    }
-  })
-}
+// db.save = (array, callback) => {
+//   Checkout.deleteMany({}, () => {
+//     Checkout.insertMany(array, (err) => {
+//       if (err) {
+//         console.log(`Save method error --> `, err);
+//       } else {
+//         callback();
+//       }
+//     })
+//   });
+// };
 
-module.exports.db = db;
+// db.getDocument = (id, callback) => {
+//   Checkout.find({id:id}, (err, items) => {
+//     if (err) {
+//       console.log(`getDocument method error --> `, err);
+//     } else {
+//       callback(items);
+//     }
+//   })
+// }
+
+module.exports.Checkout = Checkout; // export Checkout variable?

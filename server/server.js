@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const bodyParser = require("body-parser");
 const path = require('path');
 const fs = require('fs');
-const database = require('./db/MySQL/checkout.js');
+const database = require('./db/MongoDB/checkout.js');
 const app = express();
 const port = process.env.PORT || 3002;
 const cors = require('cors');
@@ -27,17 +27,15 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Checkout dates
-app.get('/checkout', (req, res) => {
-  database.getRecords((results) => {
+app.get('/checkout', async (req, res) => {
+  let results = await database.getRecords()
     res.send(results);
-  });
 });
 
 // Checkout user
-app.post('/', (req, res) => {
-  database.insertRecord(req.body, () => {
-    res.end();
-  });
+app.post('/', async (req, res) => {
+  let response = await database.insertRecord(req.body);
+  res.send(response);
 });
 
 // Delete record by ID
@@ -49,7 +47,6 @@ app.delete('/', (req, res) => {
 
 // Edit reservation
 app.put('/', (req, res) => {
-  console.log(req.body.checkin);
   database.editRecord(req.body, (response) => {
     res.send(response);
   });

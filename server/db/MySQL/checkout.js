@@ -1,9 +1,12 @@
 const db = require('./index.js');
 
 const getRecords = (cb) => {
-  db.query('SELECT * FROM checkout', function (err, results) {
+  // let t0 = Date.now();
+  db.query('SELECT * FROM checkout WHERE id > 9000000 LIMIT 100', function (err, results) {
     if (err) throw err;
     cb(results);
+    // let t1 = Date.now();
+    // console.log(`Completed database query for GET API call in ${(t1 - t0)}ms.`)
   });
 };
 
@@ -22,8 +25,8 @@ const deleteRecord = (deleteID, cb) => {
     if (err) {
       console.log(`Error with delete record function: `, err);
     }
-    console.log(`Deleted reservation for ID: `, deleteID);
-    cb(`Deleted reservation for ID: `, deleteID);
+    console.log(`Deleted reservation for ID: ${deleteID}`);
+    cb(`Deleted reservation for ID: ${deleteID}`);
   })
 };
 

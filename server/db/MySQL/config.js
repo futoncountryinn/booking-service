@@ -3,7 +3,7 @@ const Promise = require('bluebird');
 module.exports = (db) => {
   db = Promise.promisifyAll(db);
 
-  // Checkout table
+  // Create Checkout table
   return db.queryAsync(`
     CREATE TABLE IF NOT EXISTS checkout (
       id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -14,3 +14,5 @@ module.exports = (db) => {
       console.log(err);
     });
 };
+
+// deleted CuID (8/31)

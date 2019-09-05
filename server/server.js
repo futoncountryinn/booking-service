@@ -1,3 +1,4 @@
+const newrelic = require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require("body-parser");
@@ -7,6 +8,8 @@ const database = require('./db/MongoDB/checkout.js');
 const app = express();
 const port = process.env.PORT || 3002;
 const cors = require('cors');
+
+app.locals.newrelic = newrelic;
 
 // Allow CORS
 app.use(cors());

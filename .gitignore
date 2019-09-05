@@ -30,3 +30,5 @@ dist/
 # CSV for creating fake records
 records.CSV
 
+# log for newrelic agent
+newrelic_agent.log

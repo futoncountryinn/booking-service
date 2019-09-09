@@ -9,6 +9,7 @@ const app = express();
 const port = process.env.PORT || 3002;
 const cors = require('cors');
 
+// newrelic reporting
 app.locals.newrelic = newrelic;
 
 // Allow CORS

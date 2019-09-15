@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://127.0.0.1/airbnbDB', { useNewUrlParser: true });
+
+mongoose.connect('mongodb://127.0.0.1/airbnbDB', { useNewUrlParser: true, poolSize: 2000 });
 
 let checkoutSchema = {
   _id: Number,

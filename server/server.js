@@ -37,7 +37,7 @@ app.get('/checkout', async (req, res) => {
 });
 
 // Checkout user
-app.post('/', async (req, res) => {
+app.post('/reservation', async (req, res) => {
   let response = await database.insertRecord(req.body);
   res.send(response);
 });

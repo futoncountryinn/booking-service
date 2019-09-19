@@ -7,14 +7,14 @@ const path = require('path');
 const fs = require('fs');
 const database = require('./db/MongoDB/checkout.js');
 const app = express();
-const port = process.env.PORT || 3002;
+const port = 3002;
 const cors = require('cors');
 
 // newrelic reporting
 app.locals.newrelic = newrelic;
 
 // use compression
-// app.use(compression());
+app.use(compression());
 
 // Allow CORS
 app.use(cors());
@@ -63,5 +63,5 @@ app.put('/', (req, res) => {
 
 // Listen for requests
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`server running on port:${port}`);
 });

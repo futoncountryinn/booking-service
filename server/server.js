@@ -2,6 +2,7 @@ const newrelic = require('newrelic');
 const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require("body-parser");
+const compression = require('compression');
 const path = require('path');
 const fs = require('fs');
 const database = require('./db/MongoDB/checkout.js');
@@ -11,6 +12,9 @@ const cors = require('cors');
 
 // newrelic reporting
 app.locals.newrelic = newrelic;
+
+// use compression
+app.use(compression());
 
 // Allow CORS
 app.use(cors());
@@ -31,7 +35,8 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../public')));
 
 // Checkout dates
-app.get('/checkout', async (req, res) => {
+app.get('/reservation', async (req, res) => {
+  console.log(`GET /Reservation Received`)
   let results = await database.getRecords()
     res.send(results);
 });

@@ -10,7 +10,7 @@ export let options = {
 };
 
 export default function() {
-  let url = "http://localhost:3000/reservation";
+  let url = "http://localhost:3002/reservation";
   let payload = JSON.stringify({ checkin: "2019-08-18T04:00:00.000Z", password: "2019-08-24T04:00:00.000Z" });
   let res = http.post(url, payload);
   check(res, {

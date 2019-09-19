@@ -1,1 +1,1 @@
-mongoimport --db airbnbDB --collection 'checkouts' --drop --type csv --host 'ec2-18-216-141-82.us-east-2.compute.amazonaws.com:27017' --headerline --file '/Users/keenan/System Design Capstone/booking-service/server/db/records.csv'
+mongoimport --db airbnbDB --collection 'checkouts' --drop --type csv --host 'ec2-18-216-161-149.us-east-2.compute.amazonaws.com:27017' --headerline --file '/Users/keenan/System Design Capstone/booking-service/server/db/records.csv'

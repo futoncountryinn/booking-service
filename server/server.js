@@ -14,7 +14,7 @@ const cors = require('cors');
 app.locals.newrelic = newrelic;
 
 // use compression
-app.use(compression());
+// app.use(compression());
 
 // Allow CORS
 app.use(cors());
@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 app.get('/reservation', async (req, res) => {
   console.log(`GET /Reservation Received`)
   let results = await database.getRecords()
-    res.send(results);
+  res.send(results);
 });
 
 // Checkout user

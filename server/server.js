@@ -36,7 +36,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // Checkout dates
 app.get('/reservation', async (req, res) => {
-  console.log(`GET /Reservation Received`)
   let results = await database.getRecords()
   res.send(results);
 });
